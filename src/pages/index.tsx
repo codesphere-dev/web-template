@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useCounterStore } from "@/store";
 // import useCounter from "@/hooks/use-counter";
 
-function App() {
+function Home() {
   const { count, increment, reset } = useCounterStore();
 
   return (
@@ -24,4 +24,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

@@ -120,4 +120,20 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .route-error-header {
+    @apply bg-[url('/assets/images/route-error-background.jpg')] bg-cover bg-center;
+    background-clip: text;
+    color: transparent;
+    animation: slide-bg 2s linear infinite alternate;
+  }
+
+  @keyframes slide-bg {
+    from {
+      background-position:top left;
+    }
+    to {
+      background-position:  center right;
+    }
+  }
 }
