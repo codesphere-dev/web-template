@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import useCounter from "@/hooks/use-counter";
 
 function App() {
@@ -16,12 +17,7 @@ function App() {
           </h1>
           <h2 className="font-bold text-center">Vite + React + TailwindCSS</h2>
         </div>
-        <button
-          onClick={handleClick}
-          className="cursor-pointer rounded p-2 bg-black text-white hover:bg-gray-800 transition"
-        >
-          Count is {count}
-        </button>
+        <Button onClick={handleClick}>Count is {count}</Button>
         <span>Edit src/pages/index.tsx to see HMR in action!</span>
       </div>
     </div>
