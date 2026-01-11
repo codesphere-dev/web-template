@@ -1,0 +1,169 @@
+name: "Feature Request"
+description: "Propose a new feature or a significant enhancement"
+title: "[Feature] "
+labels:
+  - "type:feature"
+  - "status:triage"
+projects:
+  - "codesphere-dev/1"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Feature Request
+
+        Use this form to propose a **new feature or major enhancement**.
+        This repository uses strict triage rules. Incomplete or low-quality submissions will be closed.
+
+  - type: textarea
+    id: problem_statement
+    attributes:
+      label: Problem Statement
+      description: |
+        Clearly describe the problem or limitation this feature addresses.
+        Focus on *why* this is needed, not *how* to implement it.
+      placeholder: |
+        We currently cannot [...], which leads to [...]
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution
+      description: |
+        Describe the feature at a high level.
+        Avoid implementation details unless strictly necessary.
+      placeholder: |
+        Introduce a mechanism that allows [...]
+    validations:
+      required: true
+
+  - type: dropdown
+    id: wrc
+    attributes:
+      label: Web Risk Class (WRC)
+      description: |
+        Classify the web risk level impacted by this feature.
+        This is mandatory and used for review depth and validation rigor.
+      options:
+        - WRC0 - Style (visual, formatting, non-functional UI changes)
+        - WRC1 - UI/UX (interaction, layout, accessibility, usability)
+        - WRC2 - State / Logic (business logic, state management, data flow)
+        - WRC3 - Critical / Auth (authentication, authorization, security-critical paths)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: Business and delivery priority
+      options:
+        - P0 - Critical (blocks roadmap or production usage)
+        - P1 - High (important for near-term delivery)
+        - P2 - Medium (valuable but not urgent)
+        - P3 - Low (nice to have)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Impact / Severity
+      description: Impact if this feature is NOT implemented
+      options:
+        - S0 - Blocking (system unusable or unacceptable)
+        - S1 - Major (significant limitation or risk)
+        - S2 - Moderate (workarounds exist)
+        - S3 - Minor (limited impact)
+    validations:
+      required: true
+
+  - type: textarea
+    id: stakeholders
+    attributes:
+      label: Stakeholders / Users
+      description: |
+        Identify who benefits from this feature (teams, roles, personas).
+      placeholder: |
+        Frontend team, API consumers, platform engineers
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: |
+        Define objective, testable criteria for feature acceptance.
+        This section is mandatory and used for validation.
+      placeholder: |
+        - Given ..., when ..., then ...
+        - Feature is considered complete when ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: non_goals
+    attributes:
+      label: Non-Goals
+      description: |
+        Explicitly state what is out of scope for this feature.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: |
+        List alternative solutions or approaches and why they were rejected.
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: |
+        External systems, teams, libraries, or prior work required.
+      placeholder: |
+        Depends on issue #123, API v2 availability
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks & Trade-offs
+      description: |
+        Technical, product, or organizational risks.
+        Pay special attention to risks related to the selected WRC.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: definition_of_done
+    attributes:
+      label: Definition of Done
+      description: |
+        All items must be satisfied before the feature can be closed.
+      options:
+        - label: Acceptance criteria are fully met
+          required: true
+        - label: Documentation updated (if applicable)
+          required: true
+        - label: Tests added or updated according to WRC level
+          required: true
+        - label: Security review completed (required for WRC3)
+          required: true
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: |
+        Mockups, diagrams, links to discussions, or prior art.
+    validations:
+      required: false
