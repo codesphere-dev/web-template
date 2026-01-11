@@ -1,11 +1,9 @@
-import useCounter from "@/hooks/use-counter";
+import { Button } from "@/components/ui/button";
+import { useCounterStore } from "@/store";
+// import useCounter from "@/hooks/use-counter";
 
 function App() {
-  const { count, increment } = useCounter();
-
-  const handleClick = () => {
-    increment();
-  };
+  const { count, increment, reset } = useCounterStore();
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
@@ -16,12 +14,10 @@ function App() {
           </h1>
           <h2 className="font-bold text-center">Vite + React + TailwindCSS</h2>
         </div>
-        <button
-          onClick={handleClick}
-          className="cursor-pointer rounded p-2 bg-black text-white hover:bg-gray-800 transition"
-        >
-          Count is {count}
-        </button>
+        <div className="flex gap-4">
+          <Button onClick={increment}>Count is {count}</Button>
+          <Button onClick={reset}>Reset</Button>
+        </div>
         <span>Edit src/pages/index.tsx to see HMR in action!</span>
       </div>
     </div>

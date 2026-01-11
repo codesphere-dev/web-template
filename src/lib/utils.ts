@@ -1,5 +1,6 @@
-/**
- * Utility functions for the application.
- * Functions include string manipulation, date formatting, and data validation.
- * Functions are designed to be reusable and modular.
- */
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
