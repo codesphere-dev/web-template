@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { useCounterStore } from "@/store";
-// import useCounter from "@/hooks/use-counter";
 
 function Home() {
   const { count, increment, reset } = useCounterStore();
